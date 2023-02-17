@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping with js dom</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar bg-base-100 shadow-2xl lg:px-12">
+            <div class="flex-1">
+                <a class="btn btn-ghost normal-case text-xl">Shopping With JS</a>
+            </div>
+            <div class="flex-none gap-2">
+                <div class="form-control">
+                    <input type="text" placeholder="Search" class="input input-bordered" />
+                </div>
+                <div class="dropdown dropdown-end">
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="https://picsum.photos/200/300?random=1" />
+                        </div>
+                    </label>
+                    <ul tabindex="0"
+                        class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                        <li>
+                            <a class="justify-between">
+                                Profile
+                                <span class="badge">New</span>
+                            </a>
+                        </li>
+                        <li><a>Settings</a></li>
+                        <li><a>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="lg:px-12 flex flex-col md:flex-row gap-2 my-4">
+            <div class="product-details grid md:grid-cols-2 lg:grid-cols-3 gap-6   lg:w-[60%] ">
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40" src="img/coffee.jpg" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 id="first-Name" class="card-title">coffee js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tempora!</p>
+                        <p>Price: $<span id="first-price">110</span></p>
+                        <p>Quantity: <span id="first-quantity">5</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="first-card" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40" src="img/heart_js.jpg" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 id="second-name" class="card-title">Heart js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tempora!</p>
+                        <p>Price: $<span id="second-price">200</span></p>
+                        <p>Quantity: <span id="second-quantity">10</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="second-card" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40" src="img/panda.png" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 id="third-name" class="card-title">Panda js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tempora!</p>
+                        <p>Price: $<span id="third-price">250</span></p>
+                        <p>Quantity: <span id="third-quantity">5</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="third-card" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40" src="img/umbrella.png" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 id="fourth-name" class="card-title">Umbrella js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tempora!</p>
+                        <p>Price: $<span id="fourth-price">100</span></p>
+                        <p>Quantity: <span id="fourth-quantity">3</span></p>
+                        <div class="card-actions justify-end">
+                            <button id="fourth-card" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-compact w-full bg-base-100 shadow-xl">
+                    <figure><img class="w-full h-40" src="img/vue-js.jpg" alt="coffee" /></figure>
+                    <div class="card-body">
+                        <h2 id="fifth-name" class="card-title">Vue js!</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, tempora!</p>
+                        <input id="fifth-price" type="text" placeholder="Price"
+                            class="input input-bordered input-sm w-full max-w-xs" />
+                        <input id="fifth-quantity" type="text" placeholder="Quantity"
+                            class="input input-bordered input-sm w-full max-w-xs" />
+                        <div class="card-actions justify-end">
+                            <button id="fifth-card" class="btn btn-primary">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-details w-full lg:w-[40%] mx-auto">
+                <h1 class="text-3xl text-center font-bold underline">Total Products <span>0</span></h1>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th>NO</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-container">
+                            <!-- row 1 -->
+                            <!-- <tr>
+                                <th>1</th>
+                                <td>Cy Ganderton</td>
+                                <td>Quality Control Specialist</td>
+                                <td>Blue</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
